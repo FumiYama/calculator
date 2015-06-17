@@ -13,89 +13,108 @@ class ViewController: UIViewController {
 
     var num:Int = 0
     var num2:Int = 0
-    
     var operation:Int = 0
     
     
-    @IBAction func select1(sender: UIButton) {
-        num = num*10 + 1
-        label.text = String(num)
+    @IBAction func selectNum(sender:UIButton) {
+        var i:Int
+
+        for (i=0;i<=10;i++){
+            if sender.tag == i {
+                if i == 10 {
+                    num = num*10
+                } else {
+                    num = num*10 + i
+                }
+            label.text = String(num)
+            }
+        }
     }
     
-    @IBAction func select2(sender: UIButton) {
-        num = num*10 + 2
-        label.text = String(num)
-    }
+//    @IBAction func select1(sender: UIButton) {
+//        num = num*10 + 1
+//        label.text = String(num)
+//    }
+//    
+//    @IBAction func select2(sender: UIButton) {
+//        num = num*10 + 2
+//        label.text = String(num)
+//    }
+//    
+//    @IBAction func select3(){
+//        num = num*10 + 3
+//        label.text = String(num)
+//    }
+//    
+//    @IBAction func select4(){
+//        num = num*10 + 4
+//        label.text = String(num)
+//    }
+//    
+//    @IBAction func select5(){
+//        num = num*10 + 5
+//        label.text = String(num)
+//    }
+//    
+//    @IBAction func select6(){
+//        num = num*10 + 6
+//        label.text = String(num)
+//    }
+//    
+//    @IBAction func select7(){
+//        num = num*10 + 7
+//        label.text = String(num)
+//    }
+//    
+//    @IBAction func select8(){
+//        num = num*10 + 8
+//        label.text = String(num)
+//    }
+//    
+//    @IBAction func select9(){
+//        num = num*10 + 9
+//        label.text = String(num)
+//    }
+//    
+//    @IBAction func select0(){
+//        num = num*10
+//        label.text = String(num)
+//    }
     
-    @IBAction func select3(){
-        num = num*10 + 3
-        label.text = String(num)
-    }
+//    @IBAction func plus(sender: UIButton) {
+//        label.text = String(0)
+//        
+//        operation = 1
+//        num2 = num
+//        num = 0
+//    }
+//    
+//    @IBAction func minus(sender: UIButton) {
+//        label.text = String(0)
+//        operation = 2
+//        num2 = num
+//        num = 0
+//    }
+//    
+//    @IBAction func time(sender: UIButton) {
+//        label.text = String(0)
+//        operation = 3
+//        num2 = num
+//        num = 0
+//    }
+//    
+//    @IBAction func divide(sender: UIButton) {
+//        label.text = String(0)
+//        operation = 4
+//        num2 = num
+//        num = 0
+//    }
     
-    @IBAction func select4(){
-        num = num*10 + 4
-        label.text = String(num)
-    }
-    
-    @IBAction func select5(){
-        num = num*10 + 5
-        label.text = String(num)
-    }
-    
-    @IBAction func select6(){
-        num = num*10 + 6
-        label.text = String(num)
-    }
-    
-    @IBAction func select7(){
-        num = num*10 + 7
-        label.text = String(num)
-    }
-    
-    @IBAction func select8(){
-        num = num*10 + 8
-        label.text = String(num)
-    }
-    
-    @IBAction func select9(){
-        num = num*10 + 9
-        label.text = String(num)
-    }
-    
-    @IBAction func select0(){
-        num = num*10
-        label.text = String(num)
-    }
-    
-    @IBAction func plus(sender: UIButton) {
-        label.text = String(0)
-        
-        operation = 1
+    @IBAction func selectCalc(sender: UIButton) {
+        operation = sender.tag
         num2 = num
         num = 0
     }
-    
-    @IBAction func minus(sender: UIButton) {
-        label.text = String(0)
-        operation = 2
-        num2 = num
-        num = 0
-    }
-    
-    @IBAction func time(sender: UIButton) {
-        label.text = String(0)
-        operation = 3
-        num2 = num
-        num = 0
-    }
-    
-    @IBAction func divide(sender: UIButton) {
-        label.text = String(0)
-        operation = 4
-        num2 = num
-        num = 0
-    }
-    
     
     @IBAction func equal(sender: UIButton) {
         if operation == 1 {
